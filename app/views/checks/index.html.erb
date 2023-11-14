@@ -1,0 +1,59 @@
+<div class = "top">
+<h2>予定一覧ページ</h2>  
+<p><%= link_to "新規登録", :new_check %></p>
+</div>
+
+<h3>本日の日付 <%= Date.current.strftime("%Y年 %m月 %d日") %></h3>
+
+<% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+
+<table>
+   <thead>
+     <tr>
+       <th>id</th>
+       <th>タイトル</th>
+       <th>開始日</th>
+       <th>終了日</th>
+       <th>終日</th>
+       <th>更新日時</th>
+       <th>予定確認</th>
+       <th>編集</th>
+       <th>削除</th>
+     </tr>
+   </thead>
+ 
+   <tbody>
+     <% @checks.each do |check| %>
+       <tr>
+         <td><%= check.id %></td>
+         <td><%= check.title %></td>
+         <td><%= check.startday %></td>
+         <td><%= check.finishday %></td>
+         <td><% if check.allday == true %>
+         ⚪︎
+         <% else %>
+         <% end %>
+         </td>
+
+         <td><%= check.updated_at.strftime("%F %H:%M") %></td>
+
+         <td>
+         <%= link_to "予定確認", check %>
+         </td>
+
+         <td>
+           <%= link_to "編集", [:edit, check] %>
+         </td>
+
+         <td>
+         <%= link_to "削除", check, method: :delete, data: { confirm: "本当に削除しますか？"} %>
+         </td>
+       </tr>
+      
+     <% end %>
+   </tbody>
+ </table>
+ 
+ <h2>予定の合計  <%= @checks.count %>件</h2>

@@ -1,0 +1,34 @@
+<h3>予定確認</h3>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @check.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @check.startday %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @check.finishday %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><% if @check.allday == true %>
+    ⚪︎
+    <% else %>
+    <% end %>
+    </td>
+    </tr>
+  <tr>
+  <th>スケジュールメモ</th>
+  <td><%= @check.memo %></td>
+  </tr> 
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "予定一覧に戻る", :checks %></li>
+  </ul>
+</div>
