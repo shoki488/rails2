@@ -1,0 +1,12 @@
+ja: 
+ activerecode:
+  models:
+  check: チェック
+ attributes:
+  check:
+  title: タイトル
+  startday: 開始日
+  finishday: 終了日
+  allday: 終日
+  memo: スケジュールメモ
+  
