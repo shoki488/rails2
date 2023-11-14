@@ -5,14 +5,17 @@
     <th>タイトル</th>
     <td><%= @check.title %></td>
   </tr>
+
   <tr>
     <th>開始日</th>
     <td><%= @check.startday %></td>
   </tr>
+
   <tr>
     <th>終了日</th>
     <td><%= @check.finishday %></td>
   </tr>
+
   <tr>
     <th>終日</th>
     <td><% if @check.allday == true %>
@@ -20,7 +23,8 @@
     <% else %>
     <% end %>
     </td>
-    </tr>
+  </tr>
+
   <tr>
   <th>スケジュールメモ</th>
   <td><%= @check.memo %></td>

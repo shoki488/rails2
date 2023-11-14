@@ -4,6 +4,7 @@
 <%= render "shared/error", obj: @check %>
 
 <%= form_with model: @check do |f| %>
+
   <table>
     <tr>
       <th><%= f.label :title ,"タイトル" %></th>
@@ -28,7 +29,7 @@
     <tr>
     <th><%= f.label :memo ,"スケジュールメモ" %></th>
     <td><%= f.text_area :memo %></td>
-  </tr> 
+    </tr> 
   </table>
 
   <div>

@@ -43,4 +43,5 @@ class ChecksController < ApplicationController
     flash[:notice] = "予定を削除しました"
     redirect_to :checks
   end
+  
 end
